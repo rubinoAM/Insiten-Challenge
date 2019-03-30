@@ -1,0 +1,27 @@
+.side-panel{
+    min-height:70vh;
+    padding-right:0;
+}
+
+.side-panel ul li{
+    list-style-type:none;
+    border-bottom:1px solid #80aee2;
+}
+
+.side-panel ul li a{
+    text-decoration:none;
+    color:#fff;
+    transition:all 0.5s ease-out;
+}
+
+.side-panel ul li a:hover{
+    color:#80aee2;
+    margin-left:10px;
+    transition:all 0.25s ease-in;
+}
+
+@media screen and (max-width:767px){
+    .side-panel{
+        display:none;
+    }
+}

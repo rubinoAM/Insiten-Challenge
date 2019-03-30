@@ -3,6 +3,7 @@ import './App.css';
 
 //Components
 import NavBar from './components/NavBar';
+import SidePanel from './components/SidePanel';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
@@ -11,7 +12,10 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar></NavBar>
-        <Main></Main>
+        <div className="row">
+          <SidePanel></SidePanel>
+          <Main></Main>
+        </div>
         <Footer></Footer>
       </div>
     );

@@ -1,0 +1,19 @@
+.app-header span{
+    font-size:2.5rem;
+    font-weight:900;
+}
+
+.brief-text{
+    font-weight:600;
+}
+
+@media screen and (max-width:767px){
+    .app-header span{
+        font-size:2rem;
+        line-height: 1.25;
+    }
+
+    .brief-text{
+        font-size:0.875rem;
+    }
+}
