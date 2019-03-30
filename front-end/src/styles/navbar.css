@@ -5,3 +5,9 @@ a.navbar-brand{
 a.nav-item{
     font-weight:600;
 }
+
+@media screen and (max-width: 991px){
+    .nav-search{
+        display:none;
+    }
+}
