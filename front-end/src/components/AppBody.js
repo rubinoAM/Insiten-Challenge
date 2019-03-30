@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 
+//Components
+import TargetList from './TargetList';
+
 class AppBody extends Component{
     render(){
         return(
-            4
+            <div className="text-center my-5">
+                <TargetList></TargetList>
+            </div>
         )
     }
 }
