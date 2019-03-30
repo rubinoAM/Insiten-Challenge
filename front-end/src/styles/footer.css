@@ -1,0 +1,16 @@
+.page-footer{
+    color:#fff;
+}
+
+.page-footer h5{
+    font-weight:700;
+}
+
+.list-unstyled li a{
+    color:#999;
+    font-weight:600;
+}
+
+.list-unstyled li a:hover{
+    color:#ddd;
+}
