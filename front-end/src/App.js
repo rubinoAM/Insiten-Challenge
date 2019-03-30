@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
 //Components
@@ -10,14 +11,16 @@ import Footer from './components/Footer';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <NavBar></NavBar>
-        <div className="row">
-          <SidePanel></SidePanel>
-          <Main></Main>
+      <Router>
+        <div className="App">
+          <Route path="/" component={NavBar}/>
+          <div className="row">
+            <Route path="/" component={SidePanel}/>
+            <Main></Main>
+          </div>
+          <Route path="/" component={Footer}/>
         </div>
-        <Footer></Footer>
-      </div>
+      </Router>
     );
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import '../styles/main.css';
 
 //Components
@@ -9,7 +10,7 @@ class Main extends Component {
     render(){
         return(
             <div className="main-app col-md-10">
-                <AppHeader></AppHeader>
+                <Route path="/" component={AppHeader}/>
                 <AppBody></AppBody>
             </div>
         )
