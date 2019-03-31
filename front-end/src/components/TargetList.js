@@ -15,16 +15,10 @@ class TargetList extends Component{
     }
 
     render(){
-        //console.log(this.state.companies);
         let companyArr = this.state.companies.map((company,i)=>{
             return <CompanyLink data={company} key={i}></CompanyLink>;
-            // return <li className="py-3" key={i}>
-            //     <Link className="ml-4 text-white" to="/edit/${i}">
-            //         {company.name}
-            //     </Link>
-            // </li>
         })
-        //console.table(companyArr);
+        
         return(
             <div className="target-list container bg-primary">
                 <ul className="companies-list text-left">
