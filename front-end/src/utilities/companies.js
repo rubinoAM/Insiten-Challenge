@@ -1,5 +1,6 @@
 let Companies = [
     {
+        id:0,
         name:'Fulcrum Brand Investors',
         contact:'Louise Vella',
         phone:'715-279-0175',
@@ -13,6 +14,7 @@ let Companies = [
         financialPerf:'Black',
     },
     {
+        id:1,
         name:'Umbrella Inc.',
         contact:'Elena Tuturro',
         phone:'330-721-1523',
@@ -26,6 +28,7 @@ let Companies = [
         financialPerf:'Red',
     },
     {
+        id:2,
         name:'Henry\'s Plumbing',
         contact:'Henry Faulkner',
         phone:'443-242-0815',
@@ -39,6 +42,7 @@ let Companies = [
         financialPerf:'Black',
     },
     {
+        id:3,
         name:'Ralph Mattachio Brewery',
         contact:'Ralph Mattachio',
         phone:'706-612-0955',
@@ -52,3 +56,5 @@ let Companies = [
         financialPerf:'Black',
     }
 ]
+
+export default Companies;

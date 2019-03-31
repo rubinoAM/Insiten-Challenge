@@ -13,7 +13,7 @@ class Main extends Component {
             <div className="main-app col-md-10">
                 <Route exact path="/" component={ListPage}/>
                 <Route exact path="/add" component={AddPage}/>
-                <Route exact path="/edit/" component={EditPage}/>
+                <Route exact path="/edit/:id" component={EditPage}/>
             </div>
         )
     }

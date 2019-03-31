@@ -4,23 +4,31 @@ import '../styles/targetlist.css';
 
 //Utilities
 import Companies from '../utilities/companies';
+import CompanyLink from '../utilities/CompanyLink';
 
 class TargetList extends Component{
     constructor(){
         super()
         this.state = {
-            companies:[],
+            companies:Companies,
         }
     }
 
     render(){
+        //console.log(this.state.companies);
+        let companyArr = this.state.companies.map((company,i)=>{
+            return <CompanyLink data={company} key={i}></CompanyLink>;
+            // return <li className="py-3" key={i}>
+            //     <Link className="ml-4 text-white" to="/edit/${i}">
+            //         {company.name}
+            //     </Link>
+            // </li>
+        })
+        //console.table(companyArr);
         return(
             <div className="target-list container bg-primary">
                 <ul className="companies-list text-left">
-                    <li className="py-3"><Link className="ml-4 text-white" to="/edit/:id">Company One</Link></li>
-                    <li className="py-3"><Link className="ml-4 text-white" to="/edit/:id">Company Two</Link></li>
-                    <li className="py-3"><Link className="ml-4 text-white" to="/edit/:id">Company Three</Link></li>
-                    <li className="py-3"><Link className="ml-4 text-white" to="/edit/:id">Company Four</Link></li>
+                    {companyArr}
                 </ul>
             </div>
         )
