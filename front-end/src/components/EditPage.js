@@ -16,6 +16,36 @@ class EditPage extends Component{
 
     submitEdits = (e)=>{
         e.preventDefault();
+        const companyId = document.getElementById('id').value;
+        const companyName = document.getElementById('name').value;
+        const companyContact = document.getElementById('contact').value;
+        const companyPhone = document.getElementById('phone').value;
+        const companyStreet = document.getElementById('street').value;
+        const companyCity = document.getElementById('city').value;
+        const companyState = document.getElementById('state').value;
+        const companyZip = document.getElementById('zipCode').value;
+        const companyStatus = document.getElementById('status').value;
+        const companyFinancialPerf = document.getElementById('financialPerf').value;
+
+        const editedCompany = {
+            id:companyId,
+            name:companyName,
+            contact:companyContact,
+            phone:companyPhone,
+            address:{
+                street:companyStreet,
+                city:companyCity,
+                state:companyState,
+                zip:companyZip
+            },
+            status:companyStatus,
+            financialPerf:companyFinancialPerf,
+        }
+
+        Companies.splice(companyId,1,editedCompany);
+        //console.log(Companies);
+        this.props.history.push('/');
+        //console.log(editedCompany);
     }
 
     render(){
@@ -34,49 +64,50 @@ class EditPage extends Component{
                 </div>
                 <div className="form-body">
                     <form className="form-horizontal bg-primary mx-3 form-horizontal" onSubmit={this.submitEdits}>
+                        <input type="hidden" id="id" defaultValue={companyId}/>
                         <div className="form-group mt-4 pt-3 pb-2 px-2">
                             <label className="control-label text-white" htmlFor="name">Name:</label>
-                            <input type="text" className="form-control" id="name" value={companyData.name} required/>
+                            <input type="text" className="form-control" id="name" defaultValue={companyData.name} required/>
                         </div>
                         <hr/>
                         <div className="form-group p-2">
                             <label className="control-label text-white" htmlFor="contact">Contact:</label>
-                            <input type="text" className="form-control" id="contact" value={companyData.contact} required/>
+                            <input type="text" className="form-control" id="contact" defaultValue={companyData.contact} required/>
                         </div>
                         <hr/>
                         <div className="form-group p-2">
                             <label className="control-label text-white" htmlFor="phone">Phone:</label>
-                            <input type="text" className="form-control" id="phone" value={companyData.phone} required/>
+                            <input type="text" className="form-control" id="phone" defaultValue={companyData.phone} required/>
                         </div>
                         <hr/>
                         <div className="form-group p-2">
                             <label className="control-label text-white" htmlFor="street">Street Address:</label>
-                            <input type="text" className="form-control" id="street" value={companyData.address.street} required/>
+                            <input type="text" className="form-control" id="street" defaultValue={companyData.address.street} required/>
                         </div>
                         <hr/>
                         <div className="form-group p-2">
                             <label className="control-label text-white" htmlFor="city">City:</label>
-                            <input type="text" className="form-control" id="city" value={companyData.address.city} required/>
+                            <input type="text" className="form-control" id="city" defaultValue={companyData.address.city} required/>
                         </div>
                         <hr/>
                         <div className="form-group p-2">
                             <label className="control-label text-white" htmlFor="state">State:</label>
-                            <input type="text" className="form-control" id="state" value={companyData.address.state} required/>
+                            <input type="text" className="form-control" id="state" defaultValue={companyData.address.state} required/>
                         </div>
                         <hr/>
                         <div className="form-group p-2">
                             <label className="control-label text-white" htmlFor="zipCode">Zip Code:</label>
-                            <input type="text" className="form-control" id="zipCode" value={companyData.address.zip} required/>
+                            <input type="text" className="form-control" id="zipCode" defaultValue={companyData.address.zip} required/>
                         </div>
                         <hr/>
                         <div className="form-group p-2">
                             <label className="control-label text-white" htmlFor="status">Status:</label>
-                            <input type="text" className="form-control" id="status" value={companyData.status} required/>
+                            <input type="text" className="form-control" id="status" defaultValue={companyData.status} required/>
                         </div>
                         <hr/>
                         <div className="form-group p-2">
                             <label className="control-label text-white" htmlFor="financialPerf">Financial Performance:</label>
-                            <input type="text" className="form-control" id="financialPerf" value={companyData.financialPerf} required/>
+                            <input type="text" className="form-control" id="financialPerf" defaultValue={companyData.financialPerf} required/>
                         </div>
                         <hr/>
                         <div className="text-center pb-3">
