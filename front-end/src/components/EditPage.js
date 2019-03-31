@@ -14,6 +14,10 @@ class EditPage extends Component{
         window.scrollTo(0,0);
     }
 
+    submitEdits = (e)=>{
+        e.preventDefault();
+    }
+
     render(){
         //console.log(Companies);
         //console.log(window.location.pathname)
@@ -21,7 +25,7 @@ class EditPage extends Component{
         const companyId = companyPathName[companyPathName.length-1];
 
         let companyData = Companies[companyId];
-        console.log(companyData);
+        //console.log(companyData);
 
         return(
             <div>
@@ -29,7 +33,7 @@ class EditPage extends Component{
                     <span className="ml-0 ml-md-4">Edit Company</span>
                 </div>
                 <div className="form-body">
-                    <form className="form-horizontal bg-primary mx-3 form-horizontal">
+                    <form className="form-horizontal bg-primary mx-3 form-horizontal" onSubmit={this.submitEdits}>
                         <div className="form-group mt-4 pt-3 pb-2 px-2">
                             <label className="control-label text-white" htmlFor="name">Name:</label>
                             <input type="text" className="form-control" id="name" value={companyData.name} required/>
@@ -77,7 +81,6 @@ class EditPage extends Component{
                         <hr/>
                         <div className="text-center pb-3">
                             <button type="submit" className="btn btn-dark">Edit</button>
-                            <button className="btn btn-danger ml-2">Delete</button>
                         </div>
                     </form>
                 </div>
