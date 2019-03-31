@@ -1,0 +1,10 @@
+.form-body{
+    width:85%;
+    margin:0 auto;
+}
+
+@media screen and (max-width:767px){
+    .form-body{
+        width:95%;
+    }
+}

@@ -1,0 +1,28 @@
+.target-list{
+    padding:0;
+}
+
+.companies-list{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+.companies-list li{
+    transition:0.25s ease-out all;
+}
+
+.companies-list li:hover{
+    background:#80aee2;
+    padding-left:10px;
+    transition:0.125s ease-in all;
+}
+
+.companies-list li a{
+    font-size:1.5rem;
+    transition:0.25s ease-out all;
+}
+
+.companies-list li a:hover{
+    text-decoration:none;
+}
