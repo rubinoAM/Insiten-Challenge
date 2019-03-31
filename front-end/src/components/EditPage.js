@@ -6,10 +6,6 @@ import '../styles/form.css';
 import Companies from '../utilities/companies';
 
 class EditPage extends Component{
-    constructor(){
-        super()
-    }
-
     componentWillUnmount(){
         window.scrollTo(0,0);
     }
