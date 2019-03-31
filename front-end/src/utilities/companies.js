@@ -1,4 +1,4 @@
-export default Companies = [
+let Companies = [
     {
         name:'Fulcrum Brand Investors',
         contact:'Louise Vella',

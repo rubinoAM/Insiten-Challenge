@@ -2,7 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/targetlist.css';
 
+//Utilities
+import Companies from '../utilities/companies';
+
 class TargetList extends Component{
+    constructor(){
+        super()
+        this.state = {
+            companies:[],
+        }
+    }
+
     render(){
         return(
             <div className="target-list container bg-primary">

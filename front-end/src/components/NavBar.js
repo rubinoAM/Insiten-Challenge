@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/navbar.css';
 
 class NavBar extends Component{
@@ -6,7 +7,7 @@ class NavBar extends Component{
         return(
             <div className="navbar-container">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-                    <a class="navbar-brand" href="#">Insiten</a>
+                    <Link class="navbar-brand" to="/">Insiten</Link>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

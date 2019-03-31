@@ -3,6 +3,10 @@ import '../styles/appheader.css';
 import '../styles/form.css';
 
 class AddPage extends Component{
+    componentWillUnmount(){
+        window.scrollTo(0,0);
+    }
+
     render(){
         return(
             <div>

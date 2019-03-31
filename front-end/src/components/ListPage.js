@@ -6,6 +6,10 @@ import AppHeader from './AppHeader';
 import TargetList from './TargetList';
 
 class ListPage extends Component{
+    componentWillUnmount(){
+        window.scrollTo(0,0);
+    }
+
     render(){
         return(
             <div>
