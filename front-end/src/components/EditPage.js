@@ -39,19 +39,13 @@ class EditPage extends Component{
         }
 
         Companies.splice(companyId,1,editedCompany);
-        //console.log(Companies);
         this.props.history.push('/');
-        //console.log(editedCompany);
     }
 
     render(){
-        //console.log(Companies);
-        //console.log(window.location.pathname)
         const companyPathName = window.location.pathname.split('/');
         const companyId = companyPathName[companyPathName.length-1];
-
         let companyData = Companies[companyId];
-        //console.log(companyData);
 
         return(
             <div>
@@ -67,43 +61,52 @@ class EditPage extends Component{
                         </div>
                         <hr/>
                         <div className="form-group p-2">
-                            <label className="control-label text-white" htmlFor="contact">Contact:</label>
-                            <input type="text" className="form-control" id="contact" defaultValue={companyData.contact} required/>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label className="control-label text-white" htmlFor="contact">Contact:</label>
+                                    <input type="text" className="form-control" id="contact" defaultValue={companyData.contact} required/>
+                                </div>
+                                <div class="col-sm-6 mt-3 mt-sm-0">
+                                    <label className="control-label text-white" htmlFor="phone">Phone:</label>
+                                    <input type="text" className="form-control" id="phone" defaultValue={companyData.phone} required/>
+                                </div>
+                            </div>
                         </div>
                         <hr/>
                         <div className="form-group p-2">
-                            <label className="control-label text-white" htmlFor="phone">Phone:</label>
-                            <input type="text" className="form-control" id="phone" defaultValue={companyData.phone} required/>
+                            <div class="row">
+                                <div className="col-sm-6">
+                                    <label className="control-label text-white" htmlFor="street">Street Address:</label>
+                                    <input type="text" className="form-control" id="street" defaultValue={companyData.address.street} required/>
+                                </div>
+                                <div className="col-sm-6 mt-3 mt-sm-0">
+                                    <label className="control-label text-white" htmlFor="city">City:</label>
+                                    <input type="text" className="form-control" id="city" defaultValue={companyData.address.city} required/>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div className="col-sm-6">
+                                    <label className="control-label text-white" htmlFor="state">State:</label>
+                                    <input type="text" className="form-control" id="state" defaultValue={companyData.address.state} required/>
+                                </div>
+                                <div className="col-sm-6 mt-3 mt-sm-0">
+                                    <label className="control-label text-white" htmlFor="zipCode">Zip Code:</label>
+                                    <input type="text" className="form-control" id="zipCode" defaultValue={companyData.address.zip} required/>
+                                </div>
+                            </div>
                         </div>
                         <hr/>
                         <div className="form-group p-2">
-                            <label className="control-label text-white" htmlFor="street">Street Address:</label>
-                            <input type="text" className="form-control" id="street" defaultValue={companyData.address.street} required/>
-                        </div>
-                        <hr/>
-                        <div className="form-group p-2">
-                            <label className="control-label text-white" htmlFor="city">City:</label>
-                            <input type="text" className="form-control" id="city" defaultValue={companyData.address.city} required/>
-                        </div>
-                        <hr/>
-                        <div className="form-group p-2">
-                            <label className="control-label text-white" htmlFor="state">State:</label>
-                            <input type="text" className="form-control" id="state" defaultValue={companyData.address.state} required/>
-                        </div>
-                        <hr/>
-                        <div className="form-group p-2">
-                            <label className="control-label text-white" htmlFor="zipCode">Zip Code:</label>
-                            <input type="text" className="form-control" id="zipCode" defaultValue={companyData.address.zip} required/>
-                        </div>
-                        <hr/>
-                        <div className="form-group p-2">
-                            <label className="control-label text-white" htmlFor="status">Status:</label>
-                            <input type="text" className="form-control" id="status" defaultValue={companyData.status} required/>
-                        </div>
-                        <hr/>
-                        <div className="form-group p-2">
-                            <label className="control-label text-white" htmlFor="financialPerf">Financial Performance:</label>
-                            <input type="text" className="form-control" id="financialPerf" defaultValue={companyData.financialPerf} required/>
+                            <div class="row">
+                                <div className="col-sm-6">
+                                    <label className="control-label text-white" htmlFor="status">Status:</label>
+                                    <input type="text" className="form-control" id="status" defaultValue={companyData.status} required/>
+                                </div>
+                                <div className="col-sm-6 mt-3 mt-sm-0">
+                                    <label className="control-label text-white" htmlFor="financialPerf">Financial Performance:</label>
+                                    <input type="text" className="form-control" id="financialPerf" defaultValue={companyData.financialPerf} required/>
+                                </div>
+                            </div>
                         </div>
                         <hr/>
                         <div className="text-center pb-3">
