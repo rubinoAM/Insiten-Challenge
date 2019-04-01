@@ -56,12 +56,12 @@ class AddPage extends Component{
                         </div>
                         <hr/>
                         <div className="form-group p-2">
-                            <div class="row">
-                                <div class="col-sm-6">
+                            <div className="row">
+                                <div className="col-sm-6">
                                     <label className="control-label text-white" htmlFor="contact">Contact:</label>
                                     <input type="text" className="form-control" id="contact" placeholder="Enter the company's contact here." required/>
                                 </div>
-                                <div class="col-sm-6 mt-3 mt-sm-0">
+                                <div className="col-sm-6 mt-3 mt-sm-0">
                                     <label className="control-label text-white" htmlFor="phone">Phone:</label>
                                     <input type="text" className="form-control" id="phone" placeholder="Enter the company contact's phone number here." required/>
                                 </div>
@@ -69,7 +69,7 @@ class AddPage extends Component{
                         </div>
                         <hr/>
                         <div className="form-group p-2">
-                            <div class="row">
+                            <div className="row">
                                 <div className="col-sm-6">
                                     <label className="control-label text-white" htmlFor="street">Street Address:</label>
                                     <input type="text" className="form-control" id="street" placeholder="Enter the company's street address here." required/>
@@ -79,7 +79,7 @@ class AddPage extends Component{
                                     <input type="text" className="form-control" id="city" placeholder="Enter the company's city here." required/>
                                 </div>
                             </div>
-                            <div class="row mt-3">
+                            <div className="row mt-3">
                                 <div className="col-sm-6">
                                     <label className="control-label text-white" htmlFor="state">State:</label>
                                     <input type="text" className="form-control" id="state" placeholder="Enter the company's state here." required/>
@@ -92,7 +92,7 @@ class AddPage extends Component{
                         </div>
                         <hr/>
                         <div className="form-group p-2">
-                            <div class="row">
+                            <div className="row">
                                 <div className="col-sm-6">
                                     <label className="control-label text-white" htmlFor="status">Status:</label>
                                     <input type="text" className="form-control" id="status" placeholder="Enter the company's status here." required/>

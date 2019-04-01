@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import '../styles/targetlist.css';
 
 //Utilities
@@ -16,7 +15,10 @@ class TargetList extends Component{
 
     render(){
         let companyArr = this.state.companies.map((company,i)=>{
-            return <CompanyLink data={company} key={i}></CompanyLink>;
+            //console.log(company);
+            if(company.name !== ''){
+                return <CompanyLink data={company} key={i}></CompanyLink>;
+            }
         })
         
         return(

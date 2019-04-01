@@ -10,6 +10,35 @@ class EditPage extends Component{
         window.scrollTo(0,0);
     }
 
+    deleteCompany = ()=>{
+        const companyId = document.getElementById('id').value;
+        const companyName = document.getElementById('name').value;
+
+        const emptiedCompany = {
+            id:companyId,
+            name:'',
+            contact:'',
+            phone:'',
+            address:{
+                street:'',
+                city:'',
+                state:'',
+                zip:''
+            },
+            status:'',
+            financialPerf:'',
+        }
+
+        let decision = window.confirm("Are you sure you want to delete this entry?");
+        if(decision === true){
+            alert(`You have successfully deleted the entry for ${companyName}.\nYou will now be redirected to the main listings page.\nThank you.`);
+            Companies.splice(companyId,1,emptiedCompany);
+            this.props.history.push('/');
+        } else {
+            alert(`The entry for ${companyName} is still in the system.\nThank you.`);
+        }
+    }
+
     submitEdits = (e)=>{
         e.preventDefault();
         const companyId = document.getElementById('id').value;
@@ -61,12 +90,12 @@ class EditPage extends Component{
                         </div>
                         <hr/>
                         <div className="form-group p-2">
-                            <div class="row">
-                                <div class="col-sm-6">
+                            <div className="row">
+                                <div className="col-sm-6">
                                     <label className="control-label text-white" htmlFor="contact">Contact:</label>
                                     <input type="text" className="form-control" id="contact" defaultValue={companyData.contact} required/>
                                 </div>
-                                <div class="col-sm-6 mt-3 mt-sm-0">
+                                <div className="col-sm-6 mt-3 mt-sm-0">
                                     <label className="control-label text-white" htmlFor="phone">Phone:</label>
                                     <input type="text" className="form-control" id="phone" defaultValue={companyData.phone} required/>
                                 </div>
@@ -74,7 +103,7 @@ class EditPage extends Component{
                         </div>
                         <hr/>
                         <div className="form-group p-2">
-                            <div class="row">
+                            <div className="row">
                                 <div className="col-sm-6">
                                     <label className="control-label text-white" htmlFor="street">Street Address:</label>
                                     <input type="text" className="form-control" id="street" defaultValue={companyData.address.street} required/>
@@ -84,7 +113,7 @@ class EditPage extends Component{
                                     <input type="text" className="form-control" id="city" defaultValue={companyData.address.city} required/>
                                 </div>
                             </div>
-                            <div class="row mt-3">
+                            <div className="row mt-3">
                                 <div className="col-sm-6">
                                     <label className="control-label text-white" htmlFor="state">State:</label>
                                     <input type="text" className="form-control" id="state" defaultValue={companyData.address.state} required/>
@@ -97,7 +126,7 @@ class EditPage extends Component{
                         </div>
                         <hr/>
                         <div className="form-group p-2">
-                            <div class="row">
+                            <div className="row">
                                 <div className="col-sm-6">
                                     <label className="control-label text-white" htmlFor="status">Status:</label>
                                     <input type="text" className="form-control" id="status" defaultValue={companyData.status} required/>
@@ -111,6 +140,7 @@ class EditPage extends Component{
                         <hr/>
                         <div className="text-center pb-3">
                             <button type="submit" className="btn btn-dark">Edit</button>
+                            <button type="button" className="ml-2 btn btn-danger" onClick={this.deleteCompany}>Delete</button>
                         </div>
                     </form>
                 </div>
